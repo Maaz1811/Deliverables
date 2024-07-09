@@ -1,93 +1,43 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
 package ca.sheridancollege.project;
 
-import java.util.ArrayList;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.util.ArrayList;
 
-/**
- *
- * @author yashk
- */
 public class GroupOfCardsTest {
-    
-    public GroupOfCardsTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
-    /**
-     * Test of getCards method, of class GroupOfCards.
-     */
     @Test
     public void testGetCards() {
         System.out.println("getCards");
-        GroupOfCards instance = null;
-        ArrayList<Card> expResult = null;
-        ArrayList<Card> result = instance.getCards();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        GroupOfCards instance = new GroupOfCards(52); // Instantiate GroupOfCards with size 52
+        ArrayList<Card> result = instance.getCards(); // Invoke method under test
+        assertNotNull(result); // Assert that the result is not null
+        assertEquals(52, result.size()); // Assert that the result has a size of 52
     }
 
-    /**
-     * Test of shuffle method, of class GroupOfCards.
-     */
     @Test
     public void testShuffle() {
         System.out.println("shuffle");
-        GroupOfCards instance = null;
-        instance.shuffle();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        GroupOfCards instance = new GroupOfCards(52); // Instantiate GroupOfCards with size 52
+        instance.shuffle(); // Invoke method under test
+        // No direct assertion possible for shuffle method
     }
 
-    /**
-     * Test of getSize method, of class GroupOfCards.
-     */
     @Test
     public void testGetSize() {
         System.out.println("getSize");
-        GroupOfCards instance = null;
-        int expResult = 0;
-        int result = instance.getSize();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        GroupOfCards instance = new GroupOfCards(52); // Instantiate GroupOfCards with size 52
+        int result = instance.getSize(); // Invoke method under test
+        assertEquals(52, result); // Assert that the result is equal to the initial size
     }
 
-    /**
-     * Test of setSize method, of class GroupOfCards.
-     */
     @Test
     public void testSetSize() {
         System.out.println("setSize");
-        int size = 0;
-        GroupOfCards instance = null;
-        instance.setSize(size);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int size = 20; // Define size to set
+        GroupOfCards instance = new GroupOfCards(52); // Instantiate GroupOfCards with size 52
+        instance.setSize(size); // Invoke method under test
+        int result = instance.getSize(); // Get the updated size
+        assertEquals(size, result); // Assert that the size is updated correctly
     }
-    
 }

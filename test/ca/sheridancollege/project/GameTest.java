@@ -24,14 +24,20 @@ public class GameTest {
     }
 
     private void testWithInput(String input, String expectedOutput) {
+        // Create a ByteArrayInputStream to simulate input
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
+        // Redirect System.in to the ByteArrayInputStream
         System.setIn(in);
 
+        // Create a ByteArrayOutputStream to capture output
         ByteArrayOutputStream out = new ByteArrayOutputStream();
+        // Redirect System.out to the ByteArrayOutputStream
         System.setOut(new PrintStream(out));
 
+        // Call the main method of the Game class
         Game.main(new String[]{});
 
+        // Assert that the output matches the expected output
         assertEquals(expectedOutput, out.toString());
     }
 }
